@@ -23,8 +23,7 @@ def prompt_command():
 		print mess
 
 def cleanup(config, token):
-	# new_config = {"last":str(int(time.time())), "token":token}
-	new_config = {"token":token}
+	new_config = {"last":str(int(time.time())), "token":token}
 	config.update(new_config)
 	json.dump(config,open("CONFIG",'w'), indent=4)
 

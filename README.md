@@ -20,6 +20,9 @@ So have at it. If you want to make this better, feel free. I'm not putting any m
 ## Requirements
 The Facebook SDK for Python: https://github.com/pythonforfacebook/facebook-sdk/blob/master/facebook.py
 
+## Known Bugs
+If you try to load posts from more than a few days ago, the results are non-deterministic. Subsequent calls may miss posts that showed up originally. My brief investigation into this problem did not reveal an answer. I don't know if this is due to the Graph API or something I'm doing.
+
 ## Commands
 ### comments
 Displays comments on the specified post(s).
