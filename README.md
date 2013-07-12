@@ -19,6 +19,7 @@ So have at it. If you want to make this better, feel free. I'm not putting any m
 
 ## Requirements
 Python 2.7: http://www.python.org/download/
+
 The Facebook SDK for Python: https://github.com/pythonforfacebook/facebook-sdk/blob/master/facebook.py
 
 ## Known Bugs
