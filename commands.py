@@ -42,7 +42,9 @@ class _Load(Command):
 	@staticmethod
 	def run(cmd_handler, *args):
 		kwargs = _Load._verify(args)
-		return cmd_handler.graph.get_connections(USER_ID,FEED_NAME,**kwargs),kwargs["since"],kwargs["until"]
+		since = kwargs["since"] if "since" in kwargs else 0
+		until = kwargs["until"] if "until" in kwargs else 0
+		return cmd_handler.graph.get_connections(USER_ID,FEED_NAME,**kwargs),since,until
 	
 	@staticmethod
 	def _verify(args):

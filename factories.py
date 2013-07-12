@@ -176,11 +176,14 @@ class LocationFactory(object):
 	@staticmethod
 	def make_location(loc_json):
 		if loc_json:
-			street = loc_json.get("street")
-			city = loc_json.get("city")
-			state = loc_json.get("state")
-			country = loc_json.get("country")
-			return Location(street,city,state,country)
+			if isinstance(loc_json, (str, unicode)):
+				return loc_json
+			else:
+				street = loc_json.get("street")
+				city = loc_json.get("city")
+				state = loc_json.get("state")
+				country = loc_json.get("country")
+				return Location(street,city,state,country)
 		else:
 			return None
 

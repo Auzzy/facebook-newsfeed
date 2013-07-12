@@ -9,6 +9,7 @@ import errors
 
 feed = None
 last_cmd = None
+week_secs = 7*24*60*60
 
 def prompt_command():
 	global feed,last_cmd
@@ -52,7 +53,7 @@ if __name__ == "__main__":
 		exit(1)
 	
 
-	last_read = config["last"]
+	last_read = config.get("last", time.time() - week_secs)
 	interval = config["interval"]
 	init_args = [last_read]
 	try:
@@ -70,6 +71,3 @@ if __name__ == "__main__":
 	except KeyboardInterrupt:
 		print "\nClosing the Facebook Newsreader."
 		cleanup(config,token)
-	except:
-		print "An unknown error has occurred, so the application will now exit."
-		exit(1)
