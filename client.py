@@ -59,8 +59,10 @@ if __name__ == "__main__":
 		feed = fbfeed.init_feed(graph,interval,init_args)
 	except errors.LoadError as mess:
 		print mess
+		exit(1)
 	except errors.CommandError:
 		print "Unexpected command execution caused an error during startup."
+		exit(1)
 
 	try:
 		while True:
@@ -68,3 +70,6 @@ if __name__ == "__main__":
 	except KeyboardInterrupt:
 		print "\nClosing the Facebook Newsreader."
 		cleanup(config,token)
+	except:
+		print "An unknown error has occurred, so the application will now exit."
+		exit(1)
