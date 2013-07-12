@@ -18,6 +18,7 @@ The code isn't bad, but it's not a great design either, as I didn't care enough 
 So have at it. If you want to make this better, feel free. I'm not putting any more of my time into bashing my head against this wall. Or should I say Book. =D
 
 ## Requirements
+Python 2.7: http://www.python.org/download/
 The Facebook SDK for Python: https://github.com/pythonforfacebook/facebook-sdk/blob/master/facebook.py
 
 ## Known Bugs
